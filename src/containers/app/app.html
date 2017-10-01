@@ -1,0 +1,30 @@
+<section class="container">
+  <section class="meteo-container">
+    <div class="card {{app.loader}}">
+      <header class="card-header">
+        <h1 class="title">{{app.title}}</h1>
+        <h2>
+          <span>{{app.temp}}</span>
+          <img src="https://openweathermap.org/img/w/{{app.icon}}.png" alt="{{app.temp}}">
+        </h2>
+      </header>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Wind Speed: {{app.meteoData.wind.speed}} mi/hr</li>
+        <li class="list-group-item">Humidity: {{app.meteoData.main.humidity}}</li>
+        <li class="list-group-item">Pressure: {{app.meteoData.main.pressure}}</li>
+      </ul>
+      <div class="card-body">
+        <main>
+          <button type="button" class="btn btn-primary {{app.disabled}}" ng-click="app.clickIt()">
+            Confirm your geolocation
+          </button>
+          <br />
+          <br />
+        </main>
+        <footer>
+          <p>{{app.text}}</p>
+        </footer>
+      </div>
+    </div>
+  </section>
+</section>
