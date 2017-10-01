@@ -5552,46 +5552,51 @@ a.text-dark:focus, a.text-dark:hover {
   margin: 10% auto;
   width: 400px;
   max-width: 100%; }
-  .meteo-container .card .card-header {
+  .meteo-container .card > .card-header {
     position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
-    background: #114357;
-    background: linear-gradient(to right, #114357, #f29492);
-    color: white;
     border-bottom: 0px;
     min-height: 180px;
     transition: all 0.2s ease; }
-    .meteo-container .card .card-header > h1 {
+    .meteo-container .card > .card-header > h1 {
       position: relative;
       line-height: 1; }
-    .meteo-container .card .card-header > h2 {
+    .meteo-container .card > .card-header > h2 {
       line-height: 1;
       margin: 0; }
-    .meteo-container .card .card-header > img {
+    .meteo-container .card > .card-header > img {
       width: 50px;
       height: 50px; }
-  .meteo-container .card .card-body footer {
-    line-height: 1;
-    font-size: 0.8em; }
-  .meteo-container .card .list-group {
+  .meteo-container .card > .card-header {
+    background: linear-gradient(to right, #114357, #f29492);
+    color: white; }
+  .meteo-container .card > .list-group {
     height: auto;
     transition: all 0.2s ease; }
-  .meteo-container .card.default .card-header > h1 {
+  .meteo-container .card > .card-body > button {
+    margin-bottom: 20px; }
+    .meteo-container .card > .card-body > button.none {
+      display: none; }
+  .meteo-container .card > .card-body > p {
+    margin: 0;
+    line-height: 1;
+    font-size: 0.8em; }
+  .meteo-container .card.default > .card-header > h1 {
     top: 30px; }
-  .meteo-container .card.default .card-header > h2 > img {
+  .meteo-container .card.default > .card-header > h2 > img {
     opacity: 0; }
-  .meteo-container .card.default .list-group {
+  .meteo-container .card.default > .list-group {
     display: block;
     overflow: hidden;
     height: 1px;
     transition: all 0.2s ease; }
-  .meteo-container .card.load .card-header {
+  .meteo-container .card.load > .card-header {
     position: relative; }
-    .meteo-container .card.load .card-header > h1, .meteo-container .card.load .card-header > h2, .meteo-container .card.load .card-header > h2 > img {
+    .meteo-container .card.load > .card-header > h1, .meteo-container .card.load > .card-header > h2, .meteo-container .card.load > .card-header > h2 > img {
       opacity: 0;
       transition: all 0.2s ease; }
-    .meteo-container .card.load .card-header::after {
+    .meteo-container .card.load > .card-header::after {
       content: "";
       position: absolute;
       top: 40%;
@@ -5605,7 +5610,7 @@ a.text-dark:focus, a.text-dark:hover {
       width: 40px;
       height: 40px;
       animation: spin 2s linear infinite; }
-  .meteo-container .card.load .list-group {
+  .meteo-container .card.load > .list-group {
     display: block;
     overflow: hidden;
     height: 1px;
