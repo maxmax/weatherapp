@@ -1,16 +1,20 @@
+@mixin card-brand($bg: #114357, $color: white) {
+  > .card-header{
+    background: $bg;
+    color: $color;
+  }
+}
+
 .meteo-container {
   position: relative;
   margin: 10% auto;
   width: 400px;
   max-width: 100%;
   .card{
-    .card-header{
+    > .card-header{
       position: relative;
       padding-top: 40px;
       padding-bottom: 40px;
-      background: #114357;
-      background: linear-gradient(to right, #114357, #f29492);
-      color: rgba(255, 255, 255, 9);
       border-bottom: 0px;
       min-height: 180px;
       transition: all 0.2s ease;
@@ -27,18 +31,26 @@
         height: 50px;
       }
     }
-    .card-body{
-      footer{
+    @include card-brand(linear-gradient(to right, #114357, #f29492), rgba(255, 255, 255, 9));
+    > .list-group{
+      height: auto;
+      transition: all 0.2s ease;
+    }
+    > .card-body{
+      > button{
+        margin-bottom: 20px;
+        &.none{
+          display: none;
+        }
+      }
+      > p{
+        margin: 0;
         line-height: 1;
         font-size: 0.8em;
       }
     }
-    .list-group{
-      height: auto;
-      transition: all 0.2s ease;
-    }
     &.default{
-      .card-header{
+      > .card-header{
         > h1 {
           top: 30px;
         }
@@ -46,7 +58,7 @@
           opacity: 0;
         }
       }
-      .list-group{
+      > .list-group{
         display: block;
         overflow: hidden;
         height: 1px;
@@ -54,7 +66,7 @@
       }
     }
     &.load{
-      .card-header{
+      > .card-header{
         position: relative;
         > h1, > h2, > h2 > img{
           opacity: 0;
@@ -62,7 +74,7 @@
         }
         @include loader(40px,2px);
       }
-      .list-group{
+      > .list-group{
         display: block;
         overflow: hidden;
         height: 1px;

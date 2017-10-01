@@ -1,29 +1,23 @@
 <section class="container">
   <section class="meteo-container">
-    <div class="card {{app.loader}}">
+    <div class="card {{app.state.loader}}">
       <header class="card-header">
-        <h1 class="title">{{app.title}}</h1>
+        <h1 class="title">{{app.state.title}}</h1>
         <h2>
-          <span>{{app.temp}}</span>
-          <img src="https://openweathermap.org/img/w/{{app.icon}}.png" alt="{{app.temp}}">
+          <span>{{app.state.temp}}</span>
+          <img src="https://openweathermap.org/img/w/{{app.state.icon}}.png" alt="{{app.state.temp}}">
         </h2>
       </header>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Wind Speed: {{app.meteoData.wind.speed}} mi/hr</li>
-        <li class="list-group-item">Humidity: {{app.meteoData.main.humidity}}</li>
-        <li class="list-group-item">Pressure: {{app.meteoData.main.pressure}}</li>
+        <li class="list-group-item">Wind Speed: {{app.state.meteoData.wind.speed}} mi/hr</li>
+        <li class="list-group-item">Humidity: {{app.state.meteoData.main.humidity}}</li>
+        <li class="list-group-item">Pressure: {{app.state.meteoData.main.pressure}}</li>
       </ul>
       <div class="card-body">
-        <main>
-          <button type="button" class="btn btn-primary {{app.disabled}}" ng-click="app.clickIt()">
-            Confirm your geolocation
-          </button>
-          <br />
-          <br />
-        </main>
-        <footer>
-          <p>{{app.text}}</p>
-        </footer>
+        <button type="button" class="btn btn-primary {{app.state.disabled}}" ng-click="app.clickIt()">
+          Confirm your geolocation
+        </button>
+        <p>{{app.state.text}}</p>
       </div>
     </div>
   </section>
